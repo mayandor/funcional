@@ -1,14 +1,10 @@
-h1 {
-    margin-top: 10%;
-    text-align: center;
-    color: #41047A;
-}
 table {
     color: #ddd;
-  width: 60%;
+  width: 90%;
   margin-top: 10%;
-  margin-left: 12%;
-  background-color: #222a5c;
+  margin-left: 1%;
+  
+  background-color: #271d64;
   border-collapse: collapse;
 }
 thead, tr{
@@ -29,7 +25,7 @@ tr:hover{
     text-decoration: none;
     margin: 10px 20px;
     display: inline-block;
-    background: #701206;
+    background: #5e0f04;
     color: #fff;
     padding: 10px 20px;
   }

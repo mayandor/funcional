@@ -27,7 +27,7 @@
     font-size: 28px; 
     padding: 0px 10px;
 }
-.boton{
+/* .boton{
     background-color: #f44336;
     color: white;
     padding: 5px 15px;
@@ -35,7 +35,7 @@
     text-decoration: none;
 
     display: inline-block;
-}
+} */
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}

@@ -43,10 +43,19 @@ try {
             echo "<td>".$fila[6]."</td>";
             echo "<td>".$fila[8]." - ".$fila[9]."</td>";
             echo "<td>".$fila[10]."</td>";
-            $sql=$conexion->prepare("SELECT * FROM estudiante e, inscripcion i, materia m WHERE e.id_es=i.id_es and i.id_mat=$fila[0]");
+            $sql=$conexion->prepare("SELECT * FROM estudiante e, inscripcion i WHERE e.id_es=i.id_es and i.id_mat=$fila[0]");
             $sql->execute();
             $fila1= $sql->fetch();
-            if($fila1[5]=$fila[0]){
+            // echo "aqui";
+            // echo "--->";
+            // echo $fila[0];
+            // if(is_bool($fila1[3])==true){
+            //     $fila1[3]= 0;
+            //     echo "---es booleano--";
+            // }
+
+            if($fila1[3]==$fila[0]){
+                // echo " entro"
                 ?>
                 <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmat" id="disable">Inscribirme</a></td>
                 <tr>
@@ -68,6 +77,5 @@ try {
         </div>
     </div>
     <script>
-        var boton= document.getElementById("disable");
-        boton = true;
+        document.getElementById('disable').disabled = true;
     </script>
