@@ -6,9 +6,9 @@ h1 {
 table {
     color: #ddd;
   width: 60%;
-  margin-top: 2%;
-  margin-left: 15%;
-  background-color: #7a8adb;
+  margin-top: 10%;
+  margin-left: 12%;
+  background-color: #222a5c;
   border-collapse: collapse;
 }
 thead, tr{
@@ -24,6 +24,15 @@ td{
 tr:hover{
     background-color: #847dad;
 }
+.botonmat {
+    font-size: 20px;
+    text-decoration: none;
+    margin: 10px 20px;
+    display: inline-block;
+    background: #701206;
+    color: #fff;
+    padding: 10px 20px;
+  }
 /* 
 a:link, a:visited {
     background-color: #f44336;

@@ -16,8 +16,6 @@
         <?php include('includes/sidebar.php')?>
         <!-- Aqui va el contenido -->
         <div class="main">
-            <h2>INSCRIBIRSE</h2>
-
 <?php 
 include('includes/conexion.inc.php');
 try {
@@ -27,7 +25,6 @@ try {
 
     <div class="main">
         <!-- Aqui va el contenido -->
-        <h1>LISTA DE MATERIAS</h1>
         <table>
             <thead>
                 <td>MATERIA</td>
@@ -46,9 +43,20 @@ try {
             echo "<td>".$fila[6]."</td>";
             echo "<td>".$fila[8]." - ".$fila[9]."</td>";
             echo "<td>".$fila[10]."</td>";
+            $sql=$conexion->prepare("SELECT * FROM estudiante e, inscripcion i, materia m WHERE e.id_es=i.id_es and i.id_mat=$fila[0]");
+            $sql->execute();
+            $fila1= $sql->fetch();
+            if($fila1[5]=$fila[0]){
+                ?>
+                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmat" id="disable">Inscribirme</a></td>
+                <tr>
+                <?php
+            }else{?>
+                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmat">Inscribirme</a></td>
+                <tr>
+        <?php
+            }
         ?>
-            <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>">Inscribirme</a></td>
-            <tr>
         <?php }
     }catch(PDOException $e){
           print "Error: ".$e->getMessage()."<br/>";
@@ -59,3 +67,7 @@ try {
         </div>
         </div>
     </div>
+    <script>
+        var boton= document.getElementById("disable");
+        boton = true;
+    </script>
