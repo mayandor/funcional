@@ -12,6 +12,5 @@
     <div class="topnavbar">
         <a href="functions/salir.php">Salir</a>
         <span><b>User:</b><?php echo $_SESSION['username'] ?></span>
-        
         <img src="img/birrete.png" width="50">
     </div>

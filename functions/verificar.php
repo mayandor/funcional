@@ -6,7 +6,9 @@ try {
     $sql1->execute(); 
     
     if ($fila1 = $sql1->fetch()){
+        $_SESSION['id_us']= $fila1[0];
         $_SESSION['username'] = $_POST['username'];
+        $_SESSION['rol']=$fila1[3];
         header("location: ../dashboard.php");
     }else{
         header("location: ../login.php?mesagge='NO'");

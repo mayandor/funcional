@@ -11,10 +11,6 @@
         <!-- Aqui va el contenido -->
         <div class="main">
             <h2>Bienvenido</h2>
-            <p>Ver aprobados por departamento</p>
-            <div class="center">
-            <a href="functions/generar_consulta.php" class="boton">Generar</a>
-            </div>
         </div>
     </div>
 <?php

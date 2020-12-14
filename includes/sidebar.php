@@ -10,4 +10,5 @@
     <div class="sidenav" style="background-color:<?php echo $_SESSION['color']; ?>">
         <a>SEA</a>
         <a href="#"><img src="./img/birrete.png" alt="" width="60"></a>
+        <a href="inscripcion.php">Inscribir</a>
     </div>
