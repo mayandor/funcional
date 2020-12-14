@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('../includes/conexion.inc.php');
 session_start();
 try{
@@ -7,20 +7,15 @@ try{
     $sql->execute();
     $fila= $sql->fetch();
     //contar cuantas veces se incribio
-    $sql3=$conexion->prepare("SELECT COUNT(*) FROM inscripcion i, estudiante e WHERE i.id_es= e.id_es and e.id_us='{$_SESSION['id_us']}'");
+    $sql3=$conexion->prepare("SELECT COUNT(*) FROM inscripcion i, estudiante e WHERE i.id_es= e.id_es");
     $sql3->execute();
     $fila3= $sql3->fetch();
-
-    if($fila3[0] < 2){
-        echo "aqui verdad";
-        echo $fila3[0];
+    if($fila3[0] > 2){
         $id_mat = $_GET['id_mat'];
         $id_es = $fila[0];
         $sql1=$conexion->prepare("INSERT INTO inscripcion(id_ins, id_mat, id_es) VALUES(NULL , '$id_mat', '$id_es')");
         $sql1->execute();
-        header("location:  ../inscripcion.php");
     }else{
-        echo "aqui faloso";
         header("location: ../inscripcion.php?mesagge='NO'");
     }
 }catch(PDOException $e){

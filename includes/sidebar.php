@@ -10,5 +10,17 @@
     <div class="sidenav" style="background-color:<?php echo $_SESSION['color']; ?>">
         <a>SEA</a>
         <a href="#"><img src="./img/birrete.png" alt="" width="60"></a>
-        <a href="inscripcion.php">Inscribir</a>
+        <?php
+            if($_SESSION['rol']=='e'){
+        ?>
+            <a href="inscripcion.php">Inscribir</a>
+        <?php
+        }
+            if($_SESSION['rol']=='d'){
+        ?>
+            <a href="#" class="menu">Listar Est</a>
+            <a href="#">Reporte</a>
+        <?php
+        }
+        ?>
     </div>

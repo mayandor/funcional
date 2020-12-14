@@ -10,7 +10,7 @@
         <?php include('includes/sidebar.php')?>
         <!-- Aqui va el contenido -->
         <div class="main">
-            <h2>Bienvenido Estudiante</h2>
+            <h2>Bienvenido Administrador</h2>
         </div>
     </div>
 <?php
