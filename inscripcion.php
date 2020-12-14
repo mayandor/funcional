@@ -43,28 +43,40 @@ try {
             echo "<td>".$fila[6]."</td>";
             echo "<td>".$fila[8]." - ".$fila[9]."</td>";
             echo "<td>".$fila[10]."</td>";
-            $sql=$conexion->prepare("SELECT * FROM estudiante e, inscripcion i WHERE e.id_es=i.id_es and i.id_mat=$fila[0]");
+            $sql=$conexion->prepare("SELECT * FROM estudiante e, inscripcion i WHERE e.id_es=i.id_es and i.id_mat=$fila[0] and e.id_us = {$_SESSION['id_us']}");
             $sql->execute();
             $fila1= $sql->fetch();
-            // echo "aqui";
-            // echo "--->";
-            // echo $fila[0];
-            // if(is_bool($fila1[3])==true){
-            //     $fila1[3]= 0;
-            //     echo "---es booleano--";
-            // }
+            // echo $fila1[0];
+            // echo "----";
+            if(is_bool($fila1)==true){
+                $fila1[3]= 'h';
+            }
 
+            if(isset($_GET['mesagge'])){
             if($fila1[3]==$fila[0]){
-                // echo " entro"
                 ?>
-                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmat" id="disable">Inscribirme</a></td>
+                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="disable" id="boton">Inscrito</a></td>
                 <tr>
                 <?php
-            }else{?>
+            }else{
+                ?>
+                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmatDisable">Inscribirme</a></td>
+                <tr>
+        <?php
+            }
+            }else{
+            if($fila1[3]==$fila[0]){
+                ?>
+                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="disable" id="boton">Inscrito</a></td>
+                <tr>
+                <?php
+            }else{
+                ?>
                 <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmat">Inscribirme</a></td>
                 <tr>
         <?php
             }
+        }
         ?>
         <?php }
     }catch(PDOException $e){
@@ -77,5 +89,5 @@ try {
         </div>
     </div>
     <script>
-        document.getElementById('disable').disabled = true;
+        document.getElementById('boton').disabled = true;
     </script>
