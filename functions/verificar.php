@@ -11,7 +11,7 @@ try {
         if($_SESSION['rol']=='e'){
             header("location: ../dashboard.php");
         }
-        if($_SESSION['rol']=='d'){
+        if($_SESSION['rol']=='a'){
             header("location: ../dashboard_Admin.php");
         }
     }else{

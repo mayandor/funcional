@@ -13,7 +13,15 @@
         <?php
             if($_SESSION['rol']=='e'){
         ?>
-            <a href="inscripcion.php">Inscribir</a>
+        <ul>
+            <li><a href="#" class="menuDesplegable">Curso de Verano</a>
+                <ul>
+                    <li class="menuDesplegable"><a href="inscripcion.php">Inscripcion</a></li>
+                    <li class="menuDesplegable"><a href="#">Materias inscritas</a></li>
+                </ul>
+            </li>    
+        </ul>
+            
         <?php
         }
             if($_SESSION['rol']=='d'){
