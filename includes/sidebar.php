@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="sidenav">
-        <h1 class="titulo">SEA</h1>
+        <h1 class="titulo">SIA</h1>
         <img src="./img/birrete.png" alt="" width="60">
         <?php
             if($_SESSION['rol']=='e'){
@@ -18,7 +18,7 @@
         <div id="menu">
         <ul>
             <li class="parent">
-                <a href="#"><span class="material-icons">layers</span>     Curso de Verano</a>
+                <a href="#"><span class="material-icons">school</span>  Curso de Verano</a>
                 <ul>
                     <li><a href="inscripcion.php">Inscripcion</a></li>
                     <li><a href="#">Materias inscritas</a></li>

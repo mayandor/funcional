@@ -3,7 +3,7 @@ table {
   width: 90%;
   margin-top: 10%;
   /* margin-right: 20%; */
-  margin-left: 0%;
+  margin-left: 4%;
   background-color: #271d64;
   border-collapse: collapse;
 }
@@ -12,10 +12,10 @@ thead, tr{
     text-align: center;
 }
 td{
-    padding-left: 10px;
-    padding-right:10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-left: 7px;
+    padding-right:7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 tr:hover{
     background-color: #847dad;

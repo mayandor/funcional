@@ -15,7 +15,7 @@
         <?php include('includes/header.php')?>
         <?php include('includes/sidebar.php')?>
         <!-- Aqui va el contenido -->
-        <div class="main">
+        <div class="">
 <?php 
 include('includes/conexion.inc.php');
 try {
@@ -46,33 +46,50 @@ try {
             $sql=$conexion->prepare("SELECT * FROM estudiante e, inscripcion i WHERE e.id_es=i.id_es and i.id_mat=$fila[0] and e.id_us = {$_SESSION['id_us']}");
             $sql->execute();
             $fila1= $sql->fetch();
-            // echo $fila1[0];
             // echo "----";
             if(is_bool($fila1)==true){
                 $fila1[3]= 'h';
             }
-
+            
             if(isset($_GET['mesagge'])){
-            if($fila1[3]==$fila[0]){
-                ?>
-                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="disable" id="boton">Inscrito</a></td>
+                //comparar si el estudiante esta en la materia
+                if($fila1[3]==$fila[0]){
+                    ?>
+                    <td>
+                    <a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="disable">
+                    <span class="material-icons">check_box</span></a>
+                    <a href="controlls/baja_inscripcion.php?id_ins=<?php echo urlencode($fila1[2]);?>" class="botonmat"><span class="material-icons">remove_circle</span></a>
+                </td>
                 <tr>
-                <?php
+                    <?php
             }else{
+                // echo $fila1[2];
                 ?>
-                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmatDisable">Inscribirme</a></td>
+                <td>
+                    <a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmatDisable">
+                    <span class="material-icons">add_circle</span></a> 
+                    <a href="controlls/baja_inscripcion.php?id_ins=<?php echo urlencode($fila1[2]);?>" class="disable"><span class="material-icons">remove_circle</span></a>
+                </td>
                 <tr>
         <?php
             }
             }else{
             if($fila1[3]==$fila[0]){
                 ?>
-                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="disable" id="boton">Inscrito</a></td>
+                <td>
+                    <a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="disable">
+                    <span class="material-icons">check_box</span></a>
+                    <a href="controlls/baja_inscripcion.php?id_ins=<?php echo urlencode($fila1[2]);?>" class="botonmat"><span class="material-icons">remove_circle</span></a>                
+                </td>
                 <tr>
                 <?php
             }else{
                 ?>
-                <td><a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmat">Inscribirme</a></td>
+                <td>
+                    <a href="controlls/alta_inscripcion.php?id_mat=<?php echo urlencode($fila[0]);?>" class="botonmat">
+                    <span class="material-icons">add_circle</span></a>
+                    <a href="controlls/baja_inscripcion.php?id_ins=<?php echo urlencode($fila1[2]);?>" class="disable"><span class="material-icons">remove_circle</span></a>
+                </td>
                 <tr>
         <?php
             }
@@ -88,6 +105,3 @@ try {
         </div>
         </div>
     </div>
-    <script>
-        document.getElementById('boton').disabled = true;
-    </script>

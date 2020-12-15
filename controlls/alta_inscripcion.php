@@ -12,7 +12,6 @@ try{
     $fila3= $sql3->fetch();
     echo $fila3[0];
     if($fila3[0] < 2){
-        echo "a-";
         $id_mat = $_GET['id_mat'];
         $id_es = $fila[0];
         $sql1=$conexion->prepare("INSERT INTO inscripcion(id_ins, id_mat, id_es) VALUES(NULL , '$id_mat', '$id_es')");
