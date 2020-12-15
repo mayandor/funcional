@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: 'Chivo', sans-serif;
-}
+} 
 img{
     float: right;
     height: 60;
@@ -12,7 +12,7 @@ img{
 }
 .topnavbar{
     overflow: hidden;
-    background-color: #998b8b;
+    background-color: #d8cdcd;
 }
 .topnavbar a {
     float: right;
