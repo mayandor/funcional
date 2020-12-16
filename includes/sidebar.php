@@ -21,7 +21,7 @@
                 <a href="#"><span class="material-icons">school</span>  Curso de Verano</a>
                 <ul>
                     <li><a href="inscripcion.php">Inscripcion</a></li>
-                    <li><a href="#">Materias inscritas</a></li>
+                    <li><a href="materias_inscritas.php">Materias inscritas</a></li>
                 </ul>
             </li> 
         </ul>
@@ -32,7 +32,8 @@
         ?>
         <div id="menu">
             <ul>
-                <li><a href="#"><span class="material-icons">folder_open</span>   Listar Estudiantes</a></li>
+                <li><a href="listaEstudiantes.php"><span class="material-icons">groups</span>   Listar Estudiantes</a></li>
+                <li><a href="listarMaterias.php"><span class="material-icons">layers</span>Listar Materias</a> </li>
                 <li><a href="#"><span class="material-icons">text_snippet</span>   Reporte</a></li>
             </ul> 
         </div>

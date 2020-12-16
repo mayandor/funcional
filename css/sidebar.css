@@ -23,6 +23,7 @@
 }
 .main {
     margin-left: 22%; 
+    margin-top: 3%;
     /* padding: 0px 10px; */
 }
 .menuDesplegable{
@@ -103,4 +104,20 @@
 
 #menu ul li:hover > ul {
     display:block;
+  }
+
+.botonNew {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #0f7c1d;
+    border-radius: 6px;
+    /* border: 2px solid #0016b0; */
+    margin-left: 70%;
+  }
+  .botonNew:hover{
+    color: #f4fdf5;
+    background-color: #48f026;
   }
