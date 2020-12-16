@@ -34,7 +34,7 @@
             <ul>
                 <li><a href="listaEstudiantes.php"><span class="material-icons">groups</span>   Listar Estudiantes</a></li>
                 <li><a href="listarMaterias.php"><span class="material-icons">layers</span>Listar Materias</a> </li>
-                <li><a href="#"><span class="material-icons">text_snippet</span>   Reporte</a></li>
+                <li><a href="preview_Reportes.php"><span class="material-icons">text_snippet</span>   Reporte</a></li>
             </ul> 
         </div>
         <?php
