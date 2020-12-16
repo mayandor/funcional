@@ -11,7 +11,7 @@
         <!-- Aqui va el contenido -->
         <div class="main">
             <h2>Resportes</h2>
-            <button onclick="window.location.href='/inscripcion_verano/Preview_ListaEM.php'">Lista Estudiantes-Materias</button>
+            <button onclick="window.location.href='Preview_ListaEM.php'">Lista Estudiantes-Materias</button>
             <button>Lista Materias-Habilitadas</button>
         </div>
     </div>

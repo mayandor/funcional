@@ -1,7 +1,7 @@
 <?php include 'includes/plantilla_pdf_est.php'; ?>
 <?php
 try {
-        $conexion = new PDO('mysql:host=localhost;dbname=academico',"root", "123");
+        $conexion = new PDO('mysql:host=localhost;dbname=academico',"ejemplo", "123456");
     } catch (PDOException $e) {
         print "¡Error!: " . $e->getMessage() . "<br/>";
         die();

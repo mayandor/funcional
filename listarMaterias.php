@@ -51,8 +51,7 @@ try {
             echo "<td>".$fila1[0]."</td>";
             ?>
                 <td>
-                    <a href="#"><span class="material-icons">delete</span></a>
-                    <a href="#"><span class="material-icons">edit</span></a>
+                    <a href="controlls/eliminarMateria.php?id_mat=<?php echo urlencode($fila[0])?>"><span class="material-icons">delete</span></a>
                 </td>
         </tr>
             <?php

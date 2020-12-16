@@ -30,7 +30,7 @@ try {
         <div>
             <h1>Lista Estudiantes y materias</h1>
         </div>
-        <button onclick="window.location.href='/inscripcion_verano/Reporte_Est.php'">Generar Reporte</button>
+        <button onclick="window.location.href='Reporte_Est.php'">Generar Reporte</button>
         <table>
             <thead>
                 <td>ID</td>

@@ -12,30 +12,30 @@
 
     <div class="main">
         <!-- Aqui va el contenido -->
-        <form class="" action="alta_materia.php" method="POST" novalidate >
-            <div class="">
-                <label class="" >Materia*</label>
-                <div class="">
+        <form action="controlls/alta_materia.php" method="POST" novalidate >
+            <div>
+                <label>Materia*</label>
+                <div>
                       <input type="text" name="materia">
                 </div>
             </div>
-            <div class="">
-                <label class="" >Sigla*</label>
-                <div class="">
+            <div>
+                <label >Sigla*</label>
+                <div>
                       <input type="text" name="sigla">
                 </div>
             </div>
-            <div class="">
-                <label class="" >Cupo minimo*</label>
-                <div class="">
+            <div>
+                <label>Cupo minimo*</label>
+                <div>
                       <input type="text" name="cupo_min">
                 </div>
             </div>
-            <div class="">
-                <label class="">Docente*</label>
-                <div class="">
+            <div>
+                <label>Docente*</label>
+                <div>
                 <select name="id_do">
-                    <option>Seleccione</option>
+                    <option>Seleccione opcion</option>
                     <?php 
                         try {
                             $sql = $conexion->prepare("SELECT * FROM docente d, usuario u WHERE d.id_us = u.id_us");
@@ -48,6 +48,38 @@
                 </select>
                 </div>
             </div>
+            <div>
+                <label>Pre-requisito*</label>
+                <div>
+                <select name="id_pre">
+                    <option>Seleccione opcion</option>
+                    <?php 
+                            $sql = $conexion->prepare("SELECT * FROM prerequisito p, materia m WHERE m.id_pre = p.id_pre");
+                            $sql->execute(); 
+                            while($fila = $sql->fetch())
+                            {                        
+                    ?>
+                      <option value="<?php echo $fila[0];?>"><?php echo $fila[1];?></option>
+                        <?php } ?>
+                </select>
+                </div>
+            </div>
+            <div>
+                <label>Horario*</label>
+                <div>
+                <select name="id_hor">
+                    <option>Seleccione opcion</option>
+                    <?php 
+                            $sql = $conexion->prepare("SELECT * FROM horario h, materia m WHERE m.id_hor = h.id_hor");
+                            $sql->execute(); 
+                            while($fila = $sql->fetch())
+                            {                        
+                    ?>
+                      <option value="<?php echo $fila[0];?>"><?php echo $fila[1]."-".$fila[2];?></option>
+                        <?php } ?>
+                </select>
+                </div>
+            </div>
         <?php
         }catch(PDOException $e){
           print "Error: ".$e->getMessage()."<br/>";
@@ -55,10 +87,9 @@
                   }  
         ?>
 
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                        <button type="submit" class="btn btn-lg btn-primary">Adicionar</button>
+                      <div>
+                        <div >
+                        <button type="submit" class="formboton">Adicionar</button>
                       </div>
                       </div>
                     </form>
